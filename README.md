@@ -3,6 +3,8 @@ O famoso "jogo da cobrinha", ou melhor, Snake Game, desenvolvido em Javascript, 
 
 Link: https://gustavolanna11.github.io/snake_game_js/
 
+  ![Captura de Tela (21)](https://github.com/user-attachments/assets/19815c6d-bcf7-4edd-a193-80600f7b6cd6)
+
   ![Captura de Tela (20)](https://github.com/GustavoLanna11/snake_game_js/assets/99662123/f9db28f9-2510-46d6-acbb-cc59a439530b)
   
   ![Captura de Tela (19)](https://github.com/GustavoLanna11/snake_game_js/assets/99662123/2d862bdf-4c94-4050-91ce-dd4a2a94bb6a)
