@@ -7,7 +7,9 @@ const ctx = canvas.getContext("2d")
 const score = document.querySelector(".score--value")
 const finalScore = document.querySelector(".final-score > span")
 const menu = document.querySelector(".menu-screen")
+const menuWin = document.querySelector(".menu-screen2")
 const buttonPlay = document.querySelector(".btn-play")
+const buttonPlay2 = document.querySelector(".btn-play2")
 //declaração do audio
 const audio = new Audio("assets/audio.mp3")
 
@@ -149,6 +151,20 @@ const checkEat = () => {
     }
 }
 
+const checkWin = () => {
+    if(score.innerText > 200){
+        win()
+    }
+}
+
+const win = () =>{
+    direction = undefined
+    menuWin.style.display = "flex"
+    finalScore.innerText = score.innerText
+    canvas.style.filter = "blur(2px)"
+}
+
+
 //verificar colisões e gameover
 const checkCollision = () => {
     const head =  snake[snake.length - 1]
@@ -183,7 +199,6 @@ const gameLoop = () => {
 
     //limpa a tela
     ctx.clearRect(0, 0, 600, 600)
-
     //cria as linhas
     drawGrid()
     //desenhando a comida
@@ -194,12 +209,16 @@ const gameLoop = () => {
     drawSnake()
     //checa se comeu
     checkEat()
+    //checa a vitória
+    checkWin()
     //checa colisão
     checkCollision()
+    
+   
 
     loopId = setTimeout(() => {
         gameLoop()
-    }, 140)
+    }, 110)
 }
 
 //executa o loop
@@ -228,6 +247,14 @@ document.addEventListener("keydown", ({key}) => {
 buttonPlay.addEventListener("click", () => {
     score.innerText = "00"
     menu.style.display = "none"
+    canvas.style.filter = "none"
+
+    snake = [{ x: 270, y: 240}]
+})
+
+buttonPlay2.addEventListener("click", () => {
+    score.innerText = "00"
+    menuWin.style.display = "none"
     canvas.style.filter = "none"
 
     snake = [{ x: 270, y: 240}]
